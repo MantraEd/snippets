@@ -1,5 +1,7 @@
 <Query Kind="Program" />
 
+
+
 void Main()
 {
 DateTime endDate;
@@ -32,9 +34,6 @@ Console.WriteLine("Rolling 6 Months (as of most recent completed month)" + start
 GetReportDates(8, out startDate, out endDate);
 Console.WriteLine("Previous Week Sunday to Monday" + startDate.ToString() + " " + endDate.ToString());
 
-GetReportDates(9, out startDate, out endDate);
-Console.WriteLine("Year to Date (as of yesterday)" + startDate.ToString() + " " + endDate.ToString());
-//I screwed up
 }
 
         private static void GetReportDates(int selectedTimeFrameId, out DateTime startDate, out DateTime endDate)
@@ -143,11 +142,8 @@ Console.WriteLine("Year to Date (as of yesterday)" + startDate.ToString() + " " 
 					while(startDate.DayOfWeek != DayOfWeek.Monday) startDate = startDate.AddDays(-1);
 					while(endDate.DayOfWeek != DayOfWeek.Sunday) endDate = endDate.AddDays(-1);
                     break;
-					
-                case 9:
-                    //Year to Date (as of yesterday)
-                    startDate = new DateTime(DateTime.Now.Year, 1, 1);                    				
-					endDate = endDate.AddDays(-1);
-                    break;
             }
         }
+
+
+
