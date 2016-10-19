@@ -34,7 +34,7 @@ Console.WriteLine("Previous Week Sunday to Monday" + startDate.ToString() + " " 
 
 GetReportDates(9, out startDate, out endDate);
 Console.WriteLine("Year to Date (as of yesterday)" + startDate.ToString() + " " + endDate.ToString());
-
+//I screwed up
 }
 
         private static void GetReportDates(int selectedTimeFrameId, out DateTime startDate, out DateTime endDate)
@@ -145,7 +145,7 @@ Console.WriteLine("Year to Date (as of yesterday)" + startDate.ToString() + " " 
                     break;
 					
                 case 9:
-                    //Year to Date (as of most recent completed month) previously "Current Year"
+                    //Year to Date (as of yesterday)
                     startDate = new DateTime(DateTime.Now.Year, 1, 1);                    				
 					endDate = endDate.AddDays(-1);
                     break;
