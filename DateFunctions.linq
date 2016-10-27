@@ -1,11 +1,11 @@
 <Query Kind="Program" />
 
-
-
 void Main()
 {
 DateTime endDate;
 DateTime startDate;
+
+Console.WriteLine($"{DateTime.Now.Month:00}{DateTime.Now.Day:00}{DateTime.Now.Year}");
 
 GetReportDates(0, out startDate, out endDate);
 Console.WriteLine("Rolling 12 Months " + startDate.ToString() + " " + endDate.ToString());
@@ -148,6 +148,3 @@ Console.WriteLine("Previous Week Sunday to Monday" + startDate.ToString() + " " 
                     break;
             }
         }
-
-
-
