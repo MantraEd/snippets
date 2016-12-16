@@ -9,21 +9,44 @@ SELECT DISTINCT
  WHERE m.definition Like '%[ABD]%';
 
  
+ --Search Tables:
+SELECT c.name AS ColName, t.name AS TableName
+FROM sys.columns c
+    JOIN sys.tables t ON c.object_id = t.object_id
+WHERE c.name LIKE '%MyName%'
+
+--Search Tables & Views:
+SELECT COLUMN_NAME, TABLE_NAME 
+FROM INFORMATION_SCHEMA.COLUMNS 
+WHERE COLUMN_NAME LIKE '%MyName%'
  
- /***********************************************************************************************
+ 
+--does colum exist in table
+IF EXISTS(SELECT * FROM  INFORMATION_SCHEMA.COLUMNS WHERE  TABLE_NAME = 'ttblClientContacts' AND COLUMN_NAME = 'strSecondaryEmailAddress') 
+BEGIN
+	ALTER TABLE ttblClientContacts DROP strSecondaryEmailAddress;
+END	
+ 
+/***********************************************************************************************
 ** Logical Advantage, LLC
 ** www.logicaladvantage.com
 ** 704-377-5066
 ** -----------------------------------------------------------------------------------------------------------------------------
-** Stored Procedure: prcIssuesRetrieveListForWorkOrder
+** Stored Procedure: prcParticipantsForSurveyRetrieve
 ** 
-** Description:	
+** Description:	get participants for some survey
 **
-** Version:	1.0.0
+** Loading tests: 
+**      prcParticipantsForSurveyRetrieve 200361
+**
+** See results:
+**
+** Version:	1.0.1
 **	
-** Author:	
+** Author:	Manny
 ** 
 ** -----------------------------------------------------------------------------------------------------------------------------
 ** Change Log:
-** v1.0.0	08/30/2016	Manny added strSurveyName for DG-530 Manage Alerts Page - Missing key data in the display for each
+** v1.0.0	10/20/2016	Manny Created
+** v1.0.1	11/14/2016	Manny - Added Secondary Phone Number
 ***********************************************************************************************/

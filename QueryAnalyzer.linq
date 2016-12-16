@@ -4,6 +4,7 @@
 
 void Main()
 {
+	//you want to change your results window to have a monospaced font like consolas
 	var dtDataTable = retrieveCustomFieldsLabel();
 	foreach (DataColumn dc in dtDataTable.Columns)
 	{
