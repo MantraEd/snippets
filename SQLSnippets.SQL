@@ -50,3 +50,16 @@ END
 ** v1.0.0	10/20/2016	Manny Created
 ** v1.0.1	11/14/2016	Manny - Added Secondary Phone Number
 ***********************************************************************************************/
+
+
+--cte
+WITH RecursiveCount_CTE(Number)
+AS
+(
+    SELECT 0 AS Number
+    UNION ALL
+    SELECT Number + 1
+    FROM RecursiveCount_CTE
+    WHERE Number < 50
+)
+select * from RecursiveCount_CTE
