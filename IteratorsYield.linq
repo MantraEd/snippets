@@ -33,9 +33,27 @@
             }
             // Output: With an iterator, more than one value can be returned.
             System.Console.WriteLine();
-
+			
+			 // Display powers of 2 up to the exponent 8:
+	        foreach (int i in Power(2, 8))
+	        {
+	            Console.Write("{0} ", i);
+	        }
         }
     }
+	
+	public static System.Collections.IEnumerable Power(int number, int exponent)
+    {
+        int counter = 0;
+        int result = 1;
+        while (counter++ < exponent)
+        {
+            result = result * number;
+            yield return result;
+        }
+    }
+
+	
 
     class ListClass : System.Collections.IEnumerable
     {
