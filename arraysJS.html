@@ -12,15 +12,15 @@ var customer = [{
 alert(customer[0].name);
 
 
-var myIterable = {};
-myIterable[Symbol.iterator] = function * foo(){
-  var index = 0;
-  while (index <= 2)
-    yield index++;
-}
+//var myIterable = {};
+//myIterable[Symbol.iterator] = function * foo(){
+ // var index = 0;
+ // while (index <= 2)
+ //   yield index++;
+//}
 
-for(let t of myIterable){ 
-    alert(t); 
-};
+//for(let t of myIterable){ 
+ //   alert(t); 
+//};
 
 </script>
