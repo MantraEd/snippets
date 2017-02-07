@@ -1,0 +1,5 @@
+npm root - the installation directory of your npm packages
+npm root -g
+C:\Users\med\AppData\Roaming\npm\node_modules
+
+npm list -g - where global libraries are installed
